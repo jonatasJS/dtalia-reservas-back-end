@@ -6,7 +6,13 @@ const Reserva = require('../models/Reserva');
 
 routes.post('/reserva', async (req, res) => {
   try {
-    const reserva = await Reserva.create(req.body);
+    const reserva = await Reserva.create({
+      clientName: req.body.clientName,
+      command: req.body.command == null ? null : req.body.command,
+      amountsOfPeople: req.body.amountsOfPeople,
+      squarePreference: req.body.squarePreference,
+      appointment: req.body.appointment
+    });
 
     return res.status(201).json({
       success: true,
