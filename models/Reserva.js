@@ -6,7 +6,7 @@ const ReservaSchema = mongoose.Schema({
     required: true
   },
   command: {
-    type: Number || String,
+    type: Number,
     required: false
   },
   amountsOfPeople: {
