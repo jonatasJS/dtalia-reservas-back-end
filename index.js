@@ -14,7 +14,9 @@ const app = express();
 const routes = require('./utils/routes');
 
 /* configs of server */
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
